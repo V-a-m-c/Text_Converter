@@ -22,15 +22,11 @@ function App() {
 
   return (
     <>
-    <BrowserRouter>
+    <BrowserRouter basename="/my-app">
     <Navbar title="Text-Editor"  Home="Services" Mode={Mode} Modehandle={Modehandle}/>
     <Routes>
-          <Route exact path={"/about"} element={<About/>}/>
-           
-          <Route exact path="/" element={<div className="container">
-          <TextForm heading= "Write Here:" Mode={Mode}/>
-          </div>}>          
-          </Route>
+    <Route exact path="/" element={<TextForm heading= "Write Here:" Mode={Mode}/>}/>
+    <Route exact path={"/about"} element={<About/>}/>             
         </Routes>  
         </BrowserRouter>
     </>
